@@ -1,0 +1,130 @@
+* { transition: all 0.2s; }
+
+.l-1 { background-color: #DF5A5B; }
+.l-2 { background-color: #F3F2CA; }
+.l-3 { background-color: #CBCC9B; }
+.l-4 { background-color: #6AB7A9; }
+.l-5 { background-color: #71DDC3; }
+
+table {
+    width: 100vw;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 15%;
+    padding: 1%;
+    vertical-align: top;
+}
+
+.sidebar > * { margin-bottom: 2%; }
+.sidebar > .list-group { max-height: 60%; }
+
+.sliders {
+    /* height: 2%; */
+    width: 80%;
+    margin-top: 5%;
+}
+
+.sliders > a:not(:hover) > span {
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 60%;
+    padding: 0;
+    margin: 0;
+    vertical-align: center;
+    text-align: center;
+    /* transform: translateX(15%) translateY(5%); */
+}
+
+.sliders > a:hover > span {
+    background-color: #F3F2CA !important;
+    border: 1px solid #CBCC9B !important;
+    border-radius: 20%;
+    height: 25px;
+    width: fit-content;
+    padding: 3px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 80%;
+    color: grey;
+    transform: translateX(50%) translateY(50%);
+    position: absolute;
+}
+
+.mainbar {
+    width: 85%;
+    text-align: center;
+}
+
+.mainbar > * {
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#icon {
+    width: 50%;
+    margin: 25%;
+}
+
+.workbench_background {
+    z-index: 0;
+    height: 95vh;
+}
+
+.workbench {
+    border: 1px solid purple;
+    z-index: 1;
+}
+
+
+.mode-switch {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    min-width: 220px;
+    margin-bottom: 2%;
+    background-color: lightgray;
+    border-radius: 4px;
+    height: 40px;
+    line-height: 100%;
+    vertical-align: middle;
+}
+
+.mode-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mode-switch > div {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    background-color: #34495e;
+    transition: 1s;
+    left: 50%;
+    border-radius: 0px 0px 0px 0px;
+    color: #1abc9c;
+    text-align: center;
+    line-height: 2.5;
+    vertical-align: middle;
+}
+
+.mode-switch input:checked + div {
+    color: #1abc9c;
+    transform: translateX(0%);
+    border-radius: 0px 4px 4px 0px;
+}
+
+.mode-switch input:not(:checked) + div {
+    color: lightgray;
+    transform: translateX(-100%);
+    border-radius: 4px 0px 0px 4px;
+}

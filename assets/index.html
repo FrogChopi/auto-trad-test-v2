@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/vendor/bootstrap/css/bootstrap.min.css" integrity="sha512-cp9JSDyi0CDCvBfFKYLWXevb3r8hRv5JxcxLkUq/LEtAmOg7X0yzR3p0x/g+S3aWcZw18mhxsCXyelKWmXgzzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" integrity="sha512-6f7HT84a/AplPkpSRSKWqbseRTG4aRrhadjZezYQ0oVk/B+nm/US5KzQkyyOyh0Mn9cyDdChRdS9qaxJRHayww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <link rel="stylesheet" type="text/css" href="assets/index.css" />
+        <link rel="icon" type="image/png" href="https://static-00.iconduck.com/assets.00/pig-icon-2048x2007-wy3w0ode.png">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td class="sidebar l-1">
+                    <a href="#" title="Exemples sample"><img id="icon" type="image/png" src="https://static-00.iconduck.com/assets.00/pig-icon-2048x2007-wy3w0ode.png" /></a>
+                    <input  id="src_dir" type="file" name="state"/>
+                    <select id="projects" data-toggle="select" class="form-control select select-primary select-block mbl"></select>
+                    <select id="chapters" class="form-control select select-primary select-block mbl"></select>
+                    <label class="mode-switch" name="trad_mode">
+                        <input type="checkbox" value="off">
+                        <div class="mover">TRAD MODE</div>
+                    </label>
+                    <label class="mode-switch" name="magic_mode">
+                        <input type="checkbox" value="off">
+                        <div class="mover">MAGIC CLEAN</div>
+                    </label>
+                    <div id="slider-1" class="sliders" ></div>
+                    <div id="folder_content" class="list-group">
+                        <!-- <button type="button" class="list-group-item list-group-item-action active">Cras justo odio</button> -->
+                    </div>
+                </td>
+                <td class="mainbar l-2">
+                    <img id="workbench_background" class="workbench_background" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" />
+                    <canvas id="workbench" class="workbench"></canvas>
+                </td>
+            </tr>
+        </table>
+    </body>
+    <footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/vendor/jquery.min.js" integrity="sha512-ju6u+4bPX50JQmgU97YOGAXmRMrD9as4LE05PdC3qycsGQmjGlfm041azyB1VfCXpkpt1i9gqXCT6XuxhBJtKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js" integrity="sha512-9p/L4acAjbjIaaGXmZf0Q2bV42HetlCLbv8EP0z3rLbQED2TAFUlDvAezy7kumYqg5T8jHtDdlm1fgIsr5QzKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/vendor/respond.min.js" integrity="sha512-qWVvreMuH9i0DrugcOtifxdtZVBBL0X75r9YweXsdCHtXUidlctw7NXg5KVP3ITPtqZ2S575A0wFkvgS2anqSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/flat-ui.min.js" integrity="sha512-GG/1z6B4MVJdQOw35lE4otrbjd2WYV+zhXgjUR+DTeaAc7s/ijgWsexEScSOIo8J4RlhC28CVerDjYQSH89ekQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script type="text/javascript" >var data = [];</script>
+        <script type="text/javascript" src="app/index.js" ></script>
+        <script type="text/javascript" src="app/flat-ui.js" defer></script>
+    </footer>
+</html>
