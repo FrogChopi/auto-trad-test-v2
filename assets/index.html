@@ -13,9 +13,22 @@
             <tr>
                 <td class="sidebar l-1">
                     <a href="#" title="Exemples sample"><img id="icon" type="image/png" src="https://static-00.iconduck.com/assets.00/pig-icon-2048x2007-wy3w0ode.png" /></a>
-                    <input  id="src_dir" type="file" name="state"/>
-                    <select id="projects" data-toggle="select" class="form-control select select-primary select-block mbl"></select>
-                    <select id="chapters" class="form-control select select-primary select-block mbl"></select>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input id="current_folder" type="text" class="form-control" placeholder="Search" id="search-query-3">
+                            <span id="search_folder" class="input-group-btn">
+                                <button type="submit" class="btn"><span class="fui-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select id="projects" data-toggle="select" class="form-control select select-primary select-block mbl">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="chapters" class="form-control select select-primary select-block mbl">
+                        </select>
+                    </div>
                     <label class="mode-switch" name="trad_mode">
                         <input type="checkbox" value="off">
                         <div class="mover">TRAD MODE</div>
@@ -26,7 +39,6 @@
                     </label>
                     <div id="slider-1" class="sliders" ></div>
                     <div id="folder_content" class="list-group">
-                        <!-- <button type="button" class="list-group-item list-group-item-action active">Cras justo odio</button> -->
                     </div>
                 </td>
                 <td class="mainbar l-2">
@@ -42,6 +54,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/vendor/respond.min.js" integrity="sha512-qWVvreMuH9i0DrugcOtifxdtZVBBL0X75r9YweXsdCHtXUidlctw7NXg5KVP3ITPtqZ2S575A0wFkvgS2anqSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/js/flat-ui.min.js" integrity="sha512-GG/1z6B4MVJdQOw35lE4otrbjd2WYV+zhXgjUR+DTeaAc7s/ijgWsexEScSOIo8J4RlhC28CVerDjYQSH89ekQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="https://unpkg.com/merge-images"></script>
         <script type="text/javascript" >var data = [];</script>
         <script type="text/javascript" src="app/index.js" ></script>
         <script type="text/javascript" src="app/flat-ui.js" defer></script>

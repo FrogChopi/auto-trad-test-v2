@@ -22,7 +22,7 @@ table {
 
 .sliders {
     /* height: 2%; */
-    width: 80%;
+    width: 98%;
     margin-top: 5%;
 }
 
@@ -57,23 +57,28 @@ table {
 .mainbar {
     width: 85%;
     text-align: center;
+    vertical-align: middle;
+    line-height: 100%;
 }
 
 .mainbar > * {
-    position: fixed;
-    left: 50vw;
+    position: absolute;
     top: 50vh;
     transform: translateX(-50%) translateY(-50%);
+    right: auto;
 }
 
 #icon {
-    width: 50%;
-    margin: 25%;
+    width: 20%;
+    margin: 5%;
 }
 
 .workbench_background {
     z-index: 0;
-    height: 95vh;
+    width: auto;
+    height: auto;
+    max-width: 70vw;
+    max-height: 95vh;
 }
 
 .workbench {
@@ -85,7 +90,7 @@ table {
 .mode-switch {
     position: relative;
     display: inline-block;
-    width: auto;
+    width: 100%;
     height: auto;
     min-width: 220px;
     margin-bottom: 2%;
@@ -127,4 +132,20 @@ table {
     color: lightgray;
     transform: translateX(-100%);
     border-radius: 4px 0px 0px 4px;
+}
+
+.list-group {
+    max-height: 40vh!important;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.list-group > .list-group-item {
+    width: 100%;
+}
+
+.list-group > .list-group-item:hover {
+    background-color: #1abc9c;
 }
