@@ -1,75 +1,21 @@
-let listened_keys = {
-    // SHIFT
-    16 : false,
-    // CTRL
-    17 : false,
-},
-prevent_events = [
-    [ 17, 83 ]
-],
-combo_touchs = {
-    "17,83" : () => console.log("save")
-},
-canvas_config = {
-    ctx : null,
-    clicked : false,
-    start_point : null,
-    prec_point : null,
-    canvas : null,
-    lineWidth : 2
-},
-global_context = {}
+/* 
+    COMBO TOUCH
+*/
 
-function refresh_canvas(canvas_config) {
-    width = document.querySelector('#workbench_background').offsetWidth
-    height = document.querySelector('#workbench_background').offsetHeight
-    
-    document.querySelector('#workbench').width = width;
-    document.querySelector('#workbench').height = height;
-    
-    document.querySelector('#workbench').getContext('2d').canvas.width = width;
-    document.querySelector('#workbench').getContext('2d').canvas.height = height;
-    
-    canvas_config.canvas = document.querySelector('#workbench')
-    canvas_config.ctx = canvas_config.canvas.getContext('2d')
-}
-
-function apply_mask(img, mask) {
-    $.ajax({
-        type: "POST",
-        url: "/inpaint",
-        data: {
-            img : img,
-            mask : mask
-        },
-        success: (res) => {
-            console.log(res)
-        }
-    });
-}
+// Ctrl + S
+combo_touchs["17,83"] = () => console.log("save")
 
 /*
 
-
-
     LOAD AND REFRESH
-
-
 
 */
 
 refresh_canvas(canvas_config)
+
 $(window).on('load', () => refresh_canvas(canvas_config))
 
-var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-        if (mutation.type === "attributes") {
-            setTimeout(() => refresh_canvas(canvas_config), 20)
-        }
-    })
-})
-
-observer.observe(document.querySelector('#workbench_background'), { attributes: true });
+attribute_observer(() => setTimeout(() => refresh_canvas(canvas_config), 20)).observe(document.querySelector('#workbench_background'), { attributes: true });
 
 $(".list-group").on('click', (e) => {
     document.querySelector('#workbench_background').src = global_context[e.target.innerHTML][0]
@@ -78,33 +24,11 @@ $(".list-group").on('click', (e) => {
     e.target.setAttribute('class', 'list-group-item list-group-item-action active')
 })
 
-$("#search_folder").on('click', (e) => {
-    $.ajax({
-        type: "GET",
-        url: "/folder?folder=" + encodeURI(document.querySelector('#current_folder').value),
-        success: (res) => {
-            res = JSON.parse(res)
-            let folder_content = document.querySelector('#folder_content')
-            global_context = {}
-            folder_content.innerHTML = ''
-            list_index = Object.keys(res)
-            // console.log(res, list_index)
-            for (let i = 0; i < list_index.length; i++){
-                folder_content.innerHTML += `<button class="list-group-item list-group-item-action">${ list_index[i] }</button>`
-                global_context[list_index[i]] = [ 'data:image/jpeg;base64, ' + res[list_index[i]] ]
-            }
-        }
-    });
-})
-
+$("#search_folder").on('click', (e) => load_folder())
 
 /*
 
-
-
     SHORTCUTS
-
-
 
 */
 
@@ -127,6 +51,12 @@ $(this).on('keydown', (e) => {
 $(this).on('keyup', (e) => {
     listened_keys[e.keyCode] = false
 })
+
+/* 
+
+    CANVAS
+
+*/
 
 $('.workbench').on('mousedown', (e) => {
     console.log(e)
