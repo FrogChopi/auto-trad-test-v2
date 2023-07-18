@@ -49,3 +49,22 @@ def inpaint():
     img.show()
     msk.show()
     return ""
+
+@router.route('/merge', methods=('GET', 'POST'))
+def merge_images():
+    # img = Image.fromstring('RGB',(request.form['width'],request.form['height']), base64.decodestring(request.form['img'][23:]))
+    # msk = Image.fromstring('RGB',(request.form['width'],request.form['height']), base64.decodestring(request.form['msk'][23:]))
+    # print(request.form['img'][23:])
+    img = Image.open(io.BytesIO(base64.b64decode(request.form['img'][24:])))
+    msk = Image.open(io.BytesIO(base64.b64decode(request.form['mask'][22:])))
+    img.show()
+    msk.show()
+    return ""
+
+@router.route('/project', methods=('GET', 'POST', 'PUT'))
+def project():
+    return ""
+
+@router.route('/inpaint', methods=('GET', 'POST'))
+def save_chapter():
+    return ""
